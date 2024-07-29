@@ -19,10 +19,26 @@ main() {
 
     # Run the R script to 1) convert VCF to GDS, 2) inject PASS as a QC filter
     #Rscript vcf2gds.R vcf_file gds $parallel
+
+    # Path to PLINK2 binary
+    dx download file-GpYzKvjJ5F2kQ5z2kvX44jP6
+    unzip plink2_linux_avx2_20240704.zip
     
+    # run plink
+    ./plink2 \
+    --vcf vcf_file \
+    --threads $parallel \
+    --make-pgen \
+    --out gds
     
     # Upload the GDS file to the project directory
-    gds=$(dx upload gds --brief --path ./$gds_filename)
-    dx-jobutil-add-output gds "$gds" --class=file
+    gds=$(dx upload gds.pgen --brief --path ./${gds_filename}.pgen)
+    dx-jobutil-add-output gds.pgen "$gds" --class=file
+
+    gds=$(dx upload gds.pvar --brief --path ./${gds_filename}.pvar)
+    dx-jobutil-add-output gds.pvar "$gds" --class=file
+
+    gds=$(dx upload gds.psam --brief --path ./${gds_filename}.psam)
+    dx-jobutil-add-output gds.psam "$gds" --class=file
 
 }
