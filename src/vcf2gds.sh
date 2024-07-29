@@ -15,11 +15,12 @@ main() {
     dx download "$vcf_file" -o vcf_file
 
     # Unpack the R library
-    tar -zxf r_library.tar.gz
+    #tar -zxf r_library.tar.gz
 
     # Run the R script to 1) convert VCF to GDS, 2) inject PASS as a QC filter
-    Rscript vcf2gds.R vcf_file gds $parallel
-
+    #Rscript vcf2gds.R vcf_file gds $parallel
+    
+    
     # Upload the GDS file to the project directory
     gds=$(dx upload gds --brief --path ./$gds_filename)
     dx-jobutil-add-output gds "$gds" --class=file
