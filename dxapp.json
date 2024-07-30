@@ -33,11 +33,29 @@
   ],
   "outputSpec": [
     {
-      "name": "gds",
-      "label": "GDS file",
+      "name": "gds.pgen",
+      "label": "PLINK2 pgen file",
       "class": "file",
       "patterns": [
-        "*"
+        "*.pgen"
+      ],
+      "help": ""
+    },
+    {
+      "name": "gds.pvar",
+      "label": "PLINK2 pvar file",
+      "class": "file",
+      "patterns": [
+        "*.pvar"
+      ],
+      "help": ""
+    },
+    {
+      "name": "gds.psam",
+      "label": "PLINK2 psam file",
+      "class": "file",
+      "patterns": [
+        "*.psam"
       ],
       "help": ""
     }
