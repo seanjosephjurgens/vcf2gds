@@ -29,16 +29,9 @@ main() {
     --vcf vcf_file \
     --threads $parallel \
     --make-pgen \
-    --out gds
+    --out ${gds_filename}
     
     # Upload the GDS file to the project directory
-    gds=$(dx upload gds.pgen --brief --path ./${gds_filename}.pgen)
-    dx-jobutil-add-output gds.pgen "$gds" --class=file
-
-    gds=$(dx upload gds.pvar --brief --path ./${gds_filename}.pvar)
-    dx-jobutil-add-output gds.pvar "$gds" --class=file
-
-    gds=$(dx upload gds.psam --brief --path ./${gds_filename}.psam)
-    dx-jobutil-add-output gds.psam "$gds" --class=file
+    dx upload ${gds_filename}.*
 
 }
