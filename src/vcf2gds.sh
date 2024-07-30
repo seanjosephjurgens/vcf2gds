@@ -39,13 +39,13 @@ main() {
     #dx upload ${gds_filename}.*
 
     # Upload the GDS file to the project directory
-    gds=$(dx upload gds.pgen --brief --path ./${gds_filename}.pgen)
-    dx-jobutil-add-output gds.pgen "$gds" --class=file
+    gds.pgen=$(dx upload gds.pgen --brief --path ./${gds_filename}.pgen)
+    dx-jobutil-add-output gds.pgen "$gds.pgen" --class=file
 
-    gds=$(dx upload gds.pvar --brief --path ./${gds_filename}.pvar)
-    dx-jobutil-add-output gds.pvar "$gds" --class=file
+    gds.pvar=$(dx upload gds.pvar --brief --path ./${gds_filename}.pvar)
+    dx-jobutil-add-output gds.pvar "$gds.pvar" --class=file
 
-    gds=$(dx upload gds.psam --brief --path ./${gds_filename}.psam)
-    dx-jobutil-add-output gds.psam "$gds" --class=file
+    gds.psam=$(dx upload gds.psam --brief --path ./${gds_filename}.psam)
+    dx-jobutil-add-output gds.psam "$gds.psam" --class=file
 
 }
