@@ -47,10 +47,10 @@ main() {
     pgen=$(dx upload pgen --brief --path ./$pgen_filename)
     dx-jobutil-add-output pgen "$pgen" --class=file
 
-    pvar=$(dx upload gds.pvar --brief --path ./$pvar_filename)
+    pvar=$(dx upload pvar --brief --path ./$pvar_filename)
     dx-jobutil-add-output pvar "$pvar" --class=file
 
-    psam=$(dx upload gds.psam --brief --path ./$psam_filename)
+    psam=$(dx upload psam --brief --path ./$psam_filename)
     dx-jobutil-add-output psam "$psam" --class=file
 
 }
