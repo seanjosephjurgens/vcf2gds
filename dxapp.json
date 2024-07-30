@@ -1,5 +1,5 @@
 {
-  "name": "vcf2plink2",
+  "name": "vcf2gds",
   "title": "VCF to PLINK2 Converter",
   "summary": "Converts a VCF file to a PLINK2 files",
   "dxapi": "1.0.0",
@@ -33,29 +33,29 @@
   ],
   "outputSpec": [
     {
-      "name": "gds.pgen",
+      "name": "pgen",
       "label": "PLINK2 pgen file",
       "class": "file",
       "patterns": [
-        "*.pgen"
+        "*"
       ],
       "help": ""
     },
     {
-      "name": "gds.pvar",
+      "name": "pvar",
       "label": "PLINK2 pvar file",
       "class": "file",
       "patterns": [
-        "*.pvar"
+        "*"
       ],
       "help": ""
     },
     {
-      "name": "gds.psam",
+      "name": "psam",
       "label": "PLINK2 psam file",
       "class": "file",
       "patterns": [
-        "*.psam"
+        "*"
       ],
       "help": ""
     }
