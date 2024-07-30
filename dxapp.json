@@ -1,7 +1,7 @@
 {
   "name": "vcf2gds",
-  "title": "VCF to GDS Converter",
-  "summary": "Converts a VCF file to a GDS file",
+  "title": "VCF to PLINK2 Converter",
+  "summary": "Converts a VCF file to a PLINK2 files",
   "dxapi": "1.0.0",
   "version": "0.0.3",
   "inputSpec": [
@@ -17,10 +17,10 @@
     },
     {
       "name": "gds_filename",
-      "label": "Filename of GDS to output",
+      "label": "Prefix of PLINK2 file to output",
       "class": "string",
       "optional": false,
-      "help": "Name of GDS output file"
+      "help": "Prefix of PLINK2 output file"
     },
     {
       "name": "parallel",
