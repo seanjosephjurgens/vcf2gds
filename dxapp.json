@@ -1,5 +1,5 @@
 {
-  "name": "vcf2gds",
+  "name": "vcf2plink2",
   "title": "VCF to PLINK2 Converter",
   "summary": "Converts a VCF file to a PLINK2 files",
   "dxapi": "1.0.0",
