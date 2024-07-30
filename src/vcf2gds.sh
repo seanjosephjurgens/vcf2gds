@@ -31,21 +31,26 @@ main() {
     --make-pgen \
     --out gds
 
-    #mv gds.pgen ${gds_filename}.pgen
-    #mv gds.pvar ${gds_filename}.pvar
-    #mv gds.psam ${gds_filename}.psam
+    mv gds.pgen pgen
+    mv gds.pvar pvar
+    mv gds.psam psam
+
+    pgen_filename="${gds_filename}.pgen"
+    pvar_filename="${gds_filename}.pvar"
+    psam_filename="${gds_filename}.psam"
+
+    echo "PGEN outfile is: "$pgen_filename
+    echo "PVAR outfile is: "$pvar_filename
+    echo "PSAM outfile is: "$psam_filename
     
     # Upload the GDS file to the project directory
-    #dx upload ${gds_filename}.*
+    pgen=$(dx upload pgen --brief --path ./$pgen_filename)
+    dx-jobutil-add-output pgen "$pgen" --class=file
 
-    # Upload the GDS file to the project directory
-    gds.pgen=$(dx upload gds.pgen --brief --path ./${gds_filename}.pgen)
-    dx-jobutil-add-output gds.pgen "$gds.pgen" --class=file
+    pvar=$(dx upload gds.pvar --brief --path ./$pvar_filename)
+    dx-jobutil-add-output pvar "$pvar" --class=file
 
-    gds.pvar=$(dx upload gds.pvar --brief --path ./${gds_filename}.pvar)
-    dx-jobutil-add-output gds.pvar "$gds.pvar" --class=file
-
-    gds.psam=$(dx upload gds.psam --brief --path ./${gds_filename}.psam)
-    dx-jobutil-add-output gds.psam "$gds.psam" --class=file
+    psam=$(dx upload gds.psam --brief --path ./$psam_filename)
+    dx-jobutil-add-output psam "$psam" --class=file
 
 }
