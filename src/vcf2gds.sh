@@ -29,6 +29,7 @@ main() {
     --vcf vcf_file \
     --threads $parallel \
     --make-pgen \
+    --keep-allele-order \
     --set-all-var-ids @:#:\$r:\$a \
     --new-id-max-allele-len 5000 \
     --out gds
