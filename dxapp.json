@@ -29,6 +29,14 @@
       "optional": true,
       "default": 16,
       "help": ""
+    },
+    {
+      "name": "sex_info_file",
+      "label": "sample sex information file, in PLINK format with headers",
+      "class": "string",
+      "optional": true,
+      "default": "NA",
+      "help": ""
     }
   ],
   "outputSpec": [
