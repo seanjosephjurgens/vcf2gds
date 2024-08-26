@@ -23,17 +23,31 @@ main() {
     # Path to PLINK2 binary
     dx download file-GpYzKvjJ5F2kQ5z2kvX44jP6
     unzip plink2_linux_avx2_20240704.zip
-    
-    # run plink
-    ./plink2 \
-    --vcf vcf_file \
-    --threads $parallel \
-    --make-pgen \
-    --keep-allele-order \
-    --set-all-var-ids @:#:\$r:\$a \
-    --new-id-max-allele-len 5000 \
-    --out gds
 
+    if [ "$sex_info_file" != "NA" ]
+    then
+        # run plink
+        ./plink2 \
+        --vcf vcf_file \
+        --update-sex $sex_info_file \
+        --split-par 2781479 155701383 \
+        --threads $parallel \
+        --make-pgen \
+        --keep-allele-order \
+        --set-all-var-ids @:#:\$r:\$a \
+        --new-id-max-allele-len 5000 \
+        --out gds
+    else
+        # run plink
+        ./plink2 \
+        --vcf vcf_file \
+        --threads $parallel \
+        --make-pgen \
+        --keep-allele-order \
+        --set-all-var-ids @:#:\$r:\$a \
+        --new-id-max-allele-len 5000 \
+        --out gds
+    fi
     mv gds.pgen pgen
     mv gds.pvar pvar
     mv gds.psam psam
