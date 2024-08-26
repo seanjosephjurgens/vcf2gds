@@ -35,6 +35,9 @@
       "label": "sample sex information file, in PLINK format with headers",
       "class": "string",
       "optional": true,
+      "patterns": [
+        "*"
+      ],
       "default": "NA",
       "help": ""
     }
