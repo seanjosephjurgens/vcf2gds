@@ -33,7 +33,7 @@
     {
       "name": "sex_info_file",
       "label": "sample sex information file, in PLINK format with headers",
-      "class": "string",
+      "class": "file",
       "optional": true,
       "patterns": [
         "*"
