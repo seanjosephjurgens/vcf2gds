@@ -32,13 +32,12 @@
     },
     {
       "name": "sex_info_file",
-      "label": "sample sex information file, in PLINK format with headers",
+      "label": "Sample sex information file in PLINK format with headers",
       "class": "file",
       "optional": true,
       "patterns": [
         "*"
       ],
-      "default": "NA",
       "help": ""
     }
   ],
