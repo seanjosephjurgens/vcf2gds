@@ -8,12 +8,19 @@
 main() {
 
     echo "Input VCF: '$vcf_file'"
-    echo "Output GDS: '$gds_filename'"
+    echo "Output GDS: '$gds_filename'"    
     echo "Number of parallel processes for file conversion: '$parallel'"
 
     # Download the VCF to convert to GDS
     dx download "$vcf_file" -o vcf_file
-
+    
+    if [ "$sex_info_file" != "NA" ]
+    then
+        echo "Sex Information File: '$sex_info_file'"
+        #Download the Sex info file
+        dx download "$sex_info_file" -o sex_info_file
+    fi
+        
     # Unpack the R library
     #tar -zxf r_library.tar.gz
 
@@ -29,7 +36,7 @@ main() {
         # run plink
         ./plink2 \
         --vcf vcf_file \
-        --update-sex $sex_info_file \
+        --update-sex sex_info_file \
         --split-par 2781479 155701383 \
         --threads $parallel \
         --make-pgen \
