@@ -28,8 +28,8 @@ main() {
     #Rscript vcf2gds.R vcf_file gds $parallel
 
     # Path to PLINK2 binary
-    dx download file-GpYzKvjJ5F2kQ5z2kvX44jP6
-    unzip plink2_linux_avx2_20240704.zip
+    dx download project-G8PjJkjJ5F2xY1f648Pj4JQx:/genome_500k_DRAGEN/04_plink/plink2_linux_avx2_20240818.zip
+    unzip plink2_linux_avx2_20240818.zip
 
     if [ "$sex_info_file" != "NA" ]
     then
